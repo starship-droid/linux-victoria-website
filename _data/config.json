@@ -1,0 +1,61 @@
+{
+  "site": {
+    "title": "Linux Victoria",
+    "subtitle": "Supporting Linux in Victoria since 1993"
+  },
+  "navbarOptions": [
+    {
+      "title": "Events",
+      "link": "https://www.meetup.com/linux-users-of-victoria/events",
+      "target": "no"
+    },
+    {
+      "title": "Contact Us",
+      "link": "/contact",
+      "target": "no"
+    },
+    {
+      "title": "Wiki",
+      "link": "https://wiki.luv.asn.au/mediawiki/index.php?title=Main_Page",
+      "target": "yes"
+    },
+    {
+      "title": "Mailing Lists",
+      "link": "https://lists.luv.asn.au/mailman3/postorius/lists/",
+      "target": "yes"
+    },
+    {
+      "title": "FAQ",
+      "link": "/posts/faq",
+      "target": "no"
+    }
+  ],
+  "usefulLinks": [
+    {
+      "title": "LUV Monthly Activities Summary",
+      "link": "https://wiki.luv.asn.au/mediawiki/index.php?title=LUV:Current_events"
+    },
+    {
+      "title": "Linux Australia",
+      "link": "https://linux.org.au/"
+    },
+    {
+      "title": "Planet Linux Australia (blogs of Australian Linux Users)",
+      "link": "https://planet.luv.asn.au/"
+    },
+    {
+      "title": "Computerbank - a charity providing cheap Linux PCs",
+      "link": "https://www.computerbank.org.au/"
+    }
+  ],
+  "newsList": [
+    {
+      "title": "LUV Monthly Activities Summary",
+      "page": "volunteer-news.md"
+    },
+    {
+      "title": "LUV Monthly Activities Summary",
+      "page": "install-fest-news.md"
+    }
+  ]
+}

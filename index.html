@@ -1,0 +1,147 @@
+---
+layout: layout.html
+---
+
+<section class="bg-body mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg">
+                <h3 class="text-primary fw-semibold ps-1 text-center text-sm-start">Upcoming Events</h3>
+                <div class="row row-gap-3"><!-- Placeholder -->
+                    <div id="meetup-placeholder" class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                
+                    <!-- Meetup Widget -->
+                    <div id="meetup-container">
+                        <div class="sk-meetup-event" data-embed-id="25530410"></div>
+                    </div>
+                
+                    <script src="https://widgets.sociablekit.com/meetup-group-events/widget.js" async defer></script>
+                
+                </div>
+                <div class="mb-5">
+                    <div class="row row-gap-1 px-3">
+                        <section class="bg-body mt-5 px-0">
+                            <div class="container px-0">
+                                <div class="bg-body-tertiary px-5 py-4 rounded-3 shadow-sm text-primary text-center">
+                                    <h2 class="mb-3 text-uppercase fs-3 fw-semibold">
+                                        Subscribe Our Newsletter
+                                    </h2>
+                                    <form class="needs-validation col-12" name="NewsletterForm" method="POST"
+                                        data-netlify="true" id="NewsletterForm" novalidate>
+
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label fs-5">Email Address</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-secondary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="mb-5 pt-5 pt-sm-0">
+                    <div class="row row-gap-1 px-3 text-center text-sm-start">
+                        <h3 class="text-primary fw-semibold">
+                            Get Involved!
+                        </h3>
+                        <h4 class="text-primary fw-semibold fs-5">
+                            Linux Victoria is currently looking for volunteers.
+                        </h4>
+                        <p>
+                            If you are interested in helping out, please fill in our <a href="/volunteer-form">Volunteer Form</a>
+                        </p>
+                        <div>
+                            <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg">
+                <div class="mb-5 pt-5 pt-sm-0">
+                    <h3 class="text-primary fw-semibold ps-1 text-uppercase text-center text-sm-start">Join LUV</h2>
+                        <div class="position-absolute text-center text-sm-start">
+                            <div class="bg-white bg-opacity-75 fs-5 px-3 py-2 rounded-3 blur-2" id="penguins_text">
+                                <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/"
+                                    class="">Subscribe to LUV's announce mailing list.</a>
+                                <p class="mb-0">
+                                    We'll send you a confirmation email in reply.
+                                </p>
+                                <p class="mb-0">
+                                    Come back, enter the confirmation <br>password, and you're done!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-11 offset-md-2" id="penguins-svg">
+                            <img class="mt-5 pt-5 mt-sm-0 pt-sm-0" src="/assets/penguins_clouds.svg" alt="Cute penguins">
+                        </div>
+                </div>
+                <div>
+                    <h3 class="text-primary fw-semibold mb-4 text-center text-sm-start">Useful Links</h3>
+                    <div class="row row-gap-1">
+                        {% for link in config.usefulLinks %}
+                        <a href="{{ link.link }}" target="_blank" class="col-12 row text-decoration-none">
+                            <div class="col">
+                                <h4
+                                    class="text-dark text-opacity-100 link-dark-hover border-start border border-5 border-end-0 border-top-0 border-bottom-0 ps-2">
+                                    {{ link.title }}
+                                </h4>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="">
+    <div class="container">
+    </div>
+</section>
+
+
+
+<script>
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const placeholder = document.getElementById("meetup-placeholder");
+            const container = document.getElementById("meetup-container");
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.target.innerHTML.trim() !== "") {
+                        placeholder.style.display = "none"; // Hide placeholder
+                        observer.disconnect(); // Stop observing once loaded
+                    }
+                });
+            });
+
+            observer.observe(container, { childList: true, subtree: true });
+        });
+
+</script>
