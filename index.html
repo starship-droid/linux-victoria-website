@@ -7,20 +7,19 @@ layout: layout.html
         <div class="row">
             <div class="col-12 col-lg">
                 <h3 class="text-primary fw-semibold ps-1 text-center text-sm-start">Upcoming Events</h3>
-                <div class="row row-gap-3"><!-- Placeholder -->
-                    <div id="meetup-placeholder" class="text-center">
+                <div class="row row-gap-3">
+                    <div id="meetup-placeholder" class="text-center meetup-placeholder">
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
-                
-                    <!-- Meetup Widget -->
+
                     <div id="meetup-container">
                         <div class="sk-meetup-event" data-embed-id="25530410"></div>
                     </div>
-                
+
                     <script src="https://widgets.sociablekit.com/meetup-group-events/widget.js" async defer></script>
-                
+
                 </div>
                 <div class="mb-5">
                     <div class="row row-gap-1 px-3">
@@ -53,7 +52,8 @@ layout: layout.html
                             Linux Victoria is currently looking for volunteers.
                         </h4>
                         <p>
-                            If you are interested in helping out, please fill in our <a href="/volunteer-form">Volunteer Form</a>
+                            If you are interested in helping out, please fill in our <a href="/volunteer-form">Volunteer
+                                Form</a>
                         </p>
                         <div>
                             <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
@@ -77,7 +77,8 @@ layout: layout.html
                             </div>
                         </div>
                         <div class="col-12 col-md-11 offset-md-2" id="penguins-svg">
-                            <img class="mt-5 pt-5 mt-sm-0 pt-sm-0" src="/assets/penguins_clouds.svg" alt="Cute penguins">
+                            <img class="mt-5 pt-5 mt-sm-0 pt-sm-0" src="/assets/penguins_clouds.svg"
+                                alt="Cute penguins">
                         </div>
                 </div>
                 <div>
@@ -112,10 +113,8 @@ layout: layout.html
     (() => {
         'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
                 if (!form.checkValidity()) {
@@ -129,19 +128,29 @@ layout: layout.html
     })()
 
     document.addEventListener("DOMContentLoaded", function () {
-            const placeholder = document.getElementById("meetup-placeholder");
-            const container = document.getElementById("meetup-container");
+        const placeholder = document.getElementById("meetup-placeholder");
+        const meetupEvent = document.querySelector(".sk-meetup-event");
 
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.target.innerHTML.trim() !== "") {
-                        placeholder.style.display = "none"; // Hide placeholder
-                        observer.disconnect(); // Stop observing once loaded
+        if (meetupEvent) {
+            meetupEvent.style.display = "none";
+        }
+
+        (function () {
+            const originalConsoleLog = console.log;
+            console.log = function (...args) {
+                originalConsoleLog.apply(console, args);
+
+                const logMessage = args.map(arg => (typeof arg === "object" ? JSON.stringify(arg) : String(arg))).join(" ");
+
+                if (logMessage.includes('"status":"success"') || logMessage.includes("{status: 'success'}")) {
+                    console.log("✅ Meetup widget successfully loaded, showing event.");
+                    placeholder.style.display = "none";
+                    if (meetupEvent) {
+                        meetupEvent.style.display = "block";
                     }
-                });
-            });
-
-            observer.observe(container, { childList: true, subtree: true });
-        });
+                }
+            };
+        })();
+    });
 
 </script>

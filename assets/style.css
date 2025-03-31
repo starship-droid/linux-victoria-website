@@ -1,9 +1,9 @@
 :root {
   --bs-primary: #000080 !important;
   --bs-success: #99ce65 !important;
-  --bs-danger: #e10086 ;
+  --bs-danger: #e10086;
   --bs-warning: #f9d523 !important;
-  --bs-info: #90dcff ;
+  --bs-info: #90dcff;
   --bs-primary-rgb: 0, 0, 128 !important;
   --bs-success-rgb: 153, 206, 101 !important;
   --bs-danger-rgb: 225, 0, 134;
@@ -40,7 +40,7 @@ body {
 }
 
 #navbar-main .navbar-brand:hover div span {
-  color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
 #navbar-main .icon-link-hover>.bi {
@@ -49,7 +49,7 @@ body {
   transition: .2s ease-in-out transform, width 0.2s ease-in-out;
 }
 
-#navbar-main .icon-link-hover:hover>.bi  {
+#navbar-main .icon-link-hover:hover>.bi {
   width: 1em !important;
   opacity: unset !important;
 }
@@ -73,11 +73,10 @@ body {
 
 .img-fun {
   top: -6rem;
-  /* background-color: #5e9726; */
 }
 
 .img-fun img {
-  --bs-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 60%) ;
+  --bs-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 60%);
 }
 
 @media (min-width: 1200px) {
@@ -95,7 +94,7 @@ body {
   border: 1px solid rgb(67 91 119 / 7%);
   box-shadow: 1px 1px 4px rgb(0 0 0 / 10%);
   display: flex !important;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start;
 }
 
 .sk_meetup_events_search_date {
@@ -108,7 +107,7 @@ body {
 
 @media (width < 430px) {
   .events-tabs .sk_meetup_event_tab_option {
-      width: auto !important;
+    width: auto !important;
   }
 }
 
@@ -148,22 +147,22 @@ body {
   background-color: rgb(0 0 128 / 30%) !important;
 }
 
-.event-btn.read-more-btn  {
+.event-btn.read-more-btn {
   background-color: rgb(0 0 128 / 70%) !important;
   border-color: rgb(255 255 255 / 100%) !important;
 }
 
-.event-btn.read-more-btn:hover  {
+.event-btn.read-more-btn:hover {
   background-color: rgb(0 0 128 / 90%) !important;
   border-color: rgb(255 255 255 / 100%) !important;
 }
 
-.sk_meetup_events_bottom_follow_btn  {
+.sk_meetup_events_bottom_follow_btn {
   background-color: rgb(0 0 128 / 70%) !important;
   border-color: rgb(255 255 255 / 100%) !important;
 }
 
-.sk_meetup_events_bottom_follow_btn:hover  {
+.sk_meetup_events_bottom_follow_btn:hover {
   background-color: rgb(0 0 128 / 90%) !important;
   border-color: rgb(255 255 255 / 100%) !important;
 }
@@ -172,13 +171,13 @@ body {
   display: none !important;
 }
 
-.sk_meetup_events_load_more_btn_container{
+.sk_meetup_events_load_more_btn_container {
   display: none;
   justify-content: center;
 }
 
 #penguins_text {
-  margin-left: -0.5rem; 
+  margin-left: -0.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
@@ -194,4 +193,12 @@ body {
 .link-dark-hover:hover {
   border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity)) !important;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+}
+
+.meetup-placeholder {
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
