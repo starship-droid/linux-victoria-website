@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta lang="eng">
-    <meta name="description" content="Linux Victoria is your ultimate resource for Linux tutorials, events, and community support in the Victoria region. Learn about Linux distributions, open-source software, and best practices. Join our local Linux community to stay updated and enhance your skills with expert resources and networking opportunities." />
+    <meta name="description" content="Linux Victoria is your ultimate resource for Linux events, and community support in the Victoria region. Learn about Linux distributions, open-source software, and best practices. Join our local Linux community to stay updated and enhance your skills with expert resources and networking opportunities." />
     <title>{{ title | default: config.site.title }}</title>
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link href="/assets/style.css" rel="stylesheet">
@@ -17,18 +17,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRW6BTDNCX"></script>
+<!-- Matomo -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MRW6BTDNCX');
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//matomo.linuxvictoria.org/";
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+    })();
 </script>
+<!-- End Matomo Code -->
+
 
 <body class="night">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
