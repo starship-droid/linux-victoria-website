@@ -1,4 +1,10 @@
-## Linux Victoria - Open Committee Meeting
+---
+title: My lovely blog post
+aliases:
+- /posts/2025-05-06_Open-Committee-Meeting
+---
+
+## Linux Victoria - Town Hall Meeting
 
 Tuesday, May 6, 2025
 7:15 PM to 9:15 PM AEST
@@ -14,7 +20,10 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 
 ## Key Discussion Points
 
-- TBC
+- April Report
+- Future Roadmap
+- Regional Summit Planning
+- Install Fests
 
 ## How To Join
 
