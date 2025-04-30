@@ -1,5 +1,4 @@
 ---
-title: My lovely blog post
 aliases:
 - /posts/2025-05-06_Open-Committee-Meeting
 ---
