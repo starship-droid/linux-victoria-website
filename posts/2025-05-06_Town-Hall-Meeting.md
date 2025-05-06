@@ -23,6 +23,8 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 - Future Roadmap
 - Regional Summit Planning
 - Install Fests
+- Training Workshops
+- Domain Transfer
 
 ## How To Join
 

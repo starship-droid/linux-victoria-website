@@ -202,3 +202,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+img[alt="Ballarat Catchup"],
+img[alt="Computerbank Farewell"],
+img[alt="Lunch Meetup"],
+img[alt="LUV Logo"] {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
