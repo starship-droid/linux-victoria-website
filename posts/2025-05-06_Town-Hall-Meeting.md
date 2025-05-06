@@ -38,9 +38,9 @@ Tuesday, May 6, 2025
 
 ## Schedule
 
-19:00 Meet and greet  
-19:30 Opening  
-20:30 Closure
+18:15 Meet and greet
+18:30 Opening
+20:00 Closure
 
 
 Meetup Link:
