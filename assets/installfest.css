@@ -119,6 +119,7 @@ body {
 
 .detail-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   margin-bottom: 1rem;
 }
@@ -237,7 +238,12 @@ body {
 
 @media (max-width: 768px) {
   .poster {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .event-details,
+  .benefits {
+    padding: 1rem;
   }
 
   .event-title {
@@ -250,5 +256,47 @@ body {
 
   .benefits-list {
     grid-template-columns: 1fr;
+  }
+
+  .qr-code {
+    position: relative;
+    margin: 1rem auto;
+    top: 0;
+    right: 0;
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .event-title {
+    font-size: 1.8rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  .cta {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (hover: hover) {
+  .benefit-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .cta:hover {
+    transform: translateY(-3px);@media (hover: hover) {
+      .benefit-item:hover {
+        transform: translateY(-5px);
+      }
+    
+      .cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(128, 61, 153, 0.6);
+      }
+    }
+    box-shadow: 0 8px 20px rgba(128, 61, 153, 0.6);
   }
 }
