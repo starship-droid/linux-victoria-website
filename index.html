@@ -5,141 +5,94 @@ layout: layout.html
 
 <section class="bg-body mt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg">
-                <h3 class="text-primary fw-semibold ps-1 text-center text-sm-start">Linux Victoria Upcoming Events</h3>
-                <div class="row row-gap-3">
-                    <section class="mt-2">
-                        <div class="container px-0">
-                            <div class="card mb-3 bg-body-tertiary rounded-3 shadow-sm text-primary position-relative border-0">
-                                <div class="row g-0">
-                                    <div class="col-md-7">
-                                        <div class="card-body ">
-                                            <h5 class="card-title">2025-06-03 Town Hall Meeting - June</h5>
-                                            <p class="card-text mb-0">Tuesday, June 3, 2025</p>
-                                            <p class="card-text mb-0">7:00 PM to 9:00 PM AEST</p>
-                                            <p class="card-text">Location: Online</p>
-                                            <a class="btn btn-sm btn-primary stretched-link"
-                                                href="/posts/2025-06-03_Town-Hall-Meeting-June.md">Read Details</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5 d-flex align-items-center justify-content-center">
-                                        <img src="https://secure.meetupstatic.com/photos/event/c/d/b/4/highres_527812660.webp?w=750"
-                                            class="img-fluid rounded" alt="...">
-                                    </div>
+
+        <!-- Upcoming Events -->
+        <section>
+            <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Linux Victoria Upcoming Events</h3>
+
+            <div class="row row-gap-3">
+                {% for event in config.eventCards %}
+                <div class="col-12 col-lg-6 pb-4">
+                    <div class="card bg-body-tertiary rounded-3 shadow-sm text-primary border-0 h-100">
+                        <div class="row g-0 flex-column flex-md-row h-100">
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ event.title }}</h5>
+                                    {% if event.date %}<p class="card-text mb-0">{{ event.date }}</p>{% endif %}
+                                    {% if event.time %}<p class="card-text mb-0">{{ event.time }}</p>{% endif %}
+                                    <p class="card-text">Location: {{ event.location }}</p>
+                                    <a class="btn btn-sm btn-primary stretched-link" href="{{ event.link }}">Read
+                                        Details</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="container px-0">
-                            <div class="card mb-3 bg-body-tertiary rounded-3 shadow-sm text-primary position-relative border-0">
-                                <div class="row g-0">
-                                    <div class="col-md-7">
-                                        <div class="card-body ">
-                                            <h5 class="card-title">Install Fest</h5>
-                                            <p class="card-text mb-0">Date to be announced</p>
-                                            <p class="card-text">Location: Victoria, Australia</p>
-                                            <a class=" stretched-link"
-                                                href="/posts/installfests"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5 d-flex align-items-center justify-content-center">
-                                        <img src="/assets/InstallFest_V2.png"
-                                            class="img-fluid rounded" alt="...">
-                                    </div>
-                                </div>
+                            <div class="col-md-5 d-flex align-items-center justify-content-center">
+                                <img src="{{ event.image }}" class="img-fluid rounded" alt="{{ event.alt }}">
                             </div>
-                        </div>
-                    </section>
-
-                    <!-- <div id="meetup-placeholder" class="text-center meetup-placeholder">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-
-                    <div id="meetup-container">
-                        <div class="sk-meetup-event" data-embed-id="25530410"></div>
-                    </div>
-
-                    <script src="https://widgets.sociablekit.com/meetup-group-events/widget.js" async defer></script> -->
-
-                </div>
-                <div class="mb-5">
-                    <div class="row row-gap-1 px-3">
-                        <section class="bg-body mt-5 px-0">
-                            <div class="container px-0">
-                                <div class="bg-body-tertiary px-5 py-4 rounded-3 shadow-sm text-primary text-center">
-                                    <h2 class="mb-3 text-uppercase fs-3 fw-semibold">
-                                        Subscribe to Our Newsletter
-                                    </h2>
-                                    <script type="text/javascript"
-                                        src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="mb-5 pt-5 pt-sm-0">
-                    <div class="row row-gap-1 px-3 text-center text-sm-start">
-                        <h3 class="text-primary fw-semibold">
-                            Get Involved!
-                        </h3>
-                        <h4 class="text-primary fw-semibold fs-5">
-                            Linux Victoria is currently looking for volunteers.
-                        </h4>
-                        <p>
-                            If you are interested in helping out, please fill in our <a href="/volunteer-form">Volunteer
-                                Form</a>
-                        </p>
-                        <div>
-                            <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            <div class="col-12 col-lg">
-                <div class="mb-5 pt-5 pt-sm-0">
-                    <h3 class="text-primary fw-semibold ps-1 text-uppercase text-center text-sm-start">Join LUV</h2>
-                        <div class="position-absolute text-center text-sm-start">
-                            <div class="bg-white bg-opacity-75 fs-5 px-3 py-2 rounded-3 blur-2" id="penguins_text">
-                                <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/"
-                                    class="">Subscribe to LUV's announce mailing list.</a>
-                                <p class="mb-0">
-                                    We'll send you a confirmation email in reply.
-                                </p>
-                                <p class="mb-0">
-                                    Come back, enter the confirmation <br>password, and you're done!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-11 offset-md-2" id="penguins-svg">
-                            <img class="mt-5 pt-5 mt-sm-0 pt-sm-0" src="/assets/penguins_clouds.svg"
-                                alt="Cute penguins">
-                        </div>
+        </section>
+
+        <!-- Ways to Engage -->
+        <section class="py-5">
+            <div class="">
+                <h3 class="text-primary fw-semibold mb-4 text-uppercase text-center">Ways to Engage </h3>
+                <br>
+                <!-- Newsletter -->
+                <div class="text-primary text-center row col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 pb-0">
+                    <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
+                    <script type="text/javascript" src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
                 </div>
-                <div>
-                    <h3 class="text-primary fw-semibold mb-4 text-center text-sm-start">Useful Links</h3>
-                    <div class="row row-gap-1">
-                        {% for link in config.usefulLinks %}
-                        <a href="{{ link.link }}" target="_blank" class="col-12 row text-decoration-none">
-                            <div class="col">
-                                <h4
-                                    class="text-dark text-opacity-100 link-dark-hover border-start border border-5 border-end-0 border-top-0 border-bottom-0 ps-2">
-                                    {{ link.title }}
-                                </h4>
-                            </div>
-                        </a>
-                        {% endfor %}
+
+                <br>
+
+                <!-- Volunteer Call -->
+                <div class="text-primary text-center row col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
+                    <h3 class="text-primary fw-semibold">Get Involved!</h3>
+                    <h4 class="text-primary fw-semibold fs-5">Linux Victoria is currently looking for volunteers.</h4>
+                    <p>
+                        If you are interested in helping out, please fill in our
+                        <a href="/volunteer-form">Volunteer Form</a>
+                    </p>
+                    <div>
+                        <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
                     </div>
                 </div>
+
+                <br>
+
+                <!-- Join LUV / Mailing List -->
+                <div class="text-primary text-center row col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
+                    <h3 class="text-primary fw-semibold">Chat in LUV's Mailing Lists</h3>
+                    <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/">Subscribe
+                        to
+                        LUV's
+                        announce mailing list.</a>
+                    <p class="mb-0">We'll send you a confirmation email in reply.</p>
+                    <p class="mb-0">Come back, enter the confirmation password, and you're done!</p>
+                </div>
+
+                <div class="mb-5 text-center text-lg-start">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Useful Links -->
+        <div class="mb-5">
+            <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
+            <div class="row row-gap-2">
+                {% for link in config.usefulLinks %}
+                <a href="{{ link.link }}" target="_blank" class="col-12 text-decoration-none">
+                    <h4 class="text-dark border-start border-primary border-5 ps-2">{{ link.title }}</h4>
+                </a>
+                {% endfor %}
             </div>
         </div>
 
-    </div>
-</section>
-
-<section class="">
-    <div class="container">
     </div>
 </section>
 
@@ -162,31 +115,4 @@ layout: layout.html
             }, false)
         })
     })()
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const placeholder = document.getElementById("meetup-placeholder");
-        const meetupEvent = document.querySelector(".sk-meetup-event");
-
-        if (meetupEvent) {
-            meetupEvent.style.display = "none";
-        }
-
-        (function () {
-            const originalConsoleLog = console.log;
-            console.log = function (...args) {
-                originalConsoleLog.apply(console, args);
-
-                const logMessage = args.map(arg => (typeof arg === "object" ? JSON.stringify(arg) : String(arg))).join(" ");
-
-                if (logMessage.includes('"status":"success"') || logMessage.includes("{status: 'success'}")) {
-                    console.log("✅ Meetup widget successfully loaded, showing event.");
-                    placeholder.style.display = "none";
-                    if (meetupEvent) {
-                        meetupEvent.style.display = "block";
-                    }
-                }
-            };
-        })();
-    });
-
 </script>

@@ -3,6 +3,26 @@
     "title": "Linux Victoria",
     "subtitle": "Supporting Linux in Victoria since 1993"
   },
+  "eventCards": [
+    {
+      "title": "2025-06-03 Town Hall Meeting - June",
+      "date": "Tuesday, June 3, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-06-03_Town-Hall-Meeting-June.md",
+      "image": "https://secure.meetupstatic.com/photos/event/c/d/b/4/highres_527812660.webp?w=750",
+      "alt": "Town Hall"
+    },
+    {
+      "title": "Install Fest",
+      "date": "Date to be announced",
+      "time": "",
+      "location": "Victoria, Australia",
+      "link": "/posts/installfests",
+      "image": "/assets/InstallFest_V3.png",
+      "alt": "Install Fest"
+    }
+  ],
   "navbarOptions": [
     {
       "title": "Events",
