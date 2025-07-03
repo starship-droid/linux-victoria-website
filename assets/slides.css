@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+.slide-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.nav-btn {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #3b4cb8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.nav-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.slides-container {
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.slide-1 {
+    background: linear-gradient(135deg, #3b4cb8 0%, #4a5bc4 100%);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 300px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect x="0" y="0" width="150" height="100" fill="%232E4BC6"/><rect x="150" y="0" width="150" height="100" fill="%234A6FE7"/><rect x="150" y="100" width="150" height="100" fill="%23A8C0FF"/><polygon points="0,0 150,0 150,100" fill="%231E3A8A"/><polygon points="150,0 300,0 300,100" fill="%233B5998"/><polygon points="150,100 300,100 300,200" fill="%232E4BC6"/><polygon points="75,100 225,100 150,200" fill="%231E3A8A"/></svg>') no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+}
+
+.slide-1::after {
+    content: '';
+}
+
+.slide-1 h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    z-index: 1;
+    position: relative;
+}
+
+.slide-1 p {
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 900px;
+    z-index: 1;
+    position: relative;
+}
+
+.slide-2 {
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #3b4cb8 50%, #3b4cb8 100%);
+    display: flex;
+    height: 100vh;
+}
+
+.slide-2-left {
+    flex: 1;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-2-right {
+    flex: 1;
+    background-color: #3b4cb8;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.slide-2-right::before {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    width: 60px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slide-2 h1 {
+    font-size: 6.5rem;
+    font-weight: 300;
+    color: #3b4cb8;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.slide-2 .subtitle {
+    font-size: 2.8rem;
+    color: #666;
+    font-weight: 300;
+}
+
+.slide-2 ul {
+    list-style: none;
+    color: white;
+}
+
+.slide-2 li {
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.slide-2 li::before {
+    content: '- ';
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .slide-nav {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .slide-1 {
+        padding: 40px 30px;
+    }
+    
+    .slide-1::before {
+        width: 250px;
+        height: 200px;
+    }
+    
+    .slide-1 h1 {
+        font-size: 3.5rem;
+    }
+    
+    .slide-1 p {
+        font-size: 1.8rem;
+    }
+    
+    .slide-2 {
+        flex-direction: column;
+    }
+    
+    .slide-2-left,
+    .slide-2-right {
+        padding: 40px 30px;
+    }
+    
+    .slide-2 h1 {
+        font-size: 3.8rem;
+    }
+    
+    .slide-2 .subtitle {
+        font-size: 2rem;
+    }
+    
+    .slide-2 li {
+        font-size: 1.8rem;
+    }
+}
